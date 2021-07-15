@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:play_music/screens/painel/painel.dart';
 import 'package:play_music/screens/play_hide/play_hide.dart';
 import 'package:we_slide/we_slide.dart';
 
 import 'footer/footer.dart';
+import 'home/home.dart';
 
 class Basic extends StatefulWidget {
   Basic({Key? key}) : super(key: key);
@@ -35,30 +37,24 @@ class _BasicState extends State<Basic> {
         footerHeight: 60.0,
         controller: _controller,
         appBar: AppBar(
+          elevation: 8,
           title: Text("We Slide"),
           //leading: BackButton(),
-          backgroundColor: Color(0xff222222),
+          backgroundColor: Color(0xff111111),
         ),
         body: Container(
             color: Colors.tealAccent,
             child: PageView(
               physics: NeverScrollableScrollPhysics(),
-              children: [
-                Container(color: Colors.amber),
-                Container(color: Colors.green)
-              ],
+              children: [Home(), Container(color: Colors.green)],
             )),
-        panel: Container(
-          color: _colorScheme.primary,
-          child: Center(child: Text("This is the panel 😊")),
-        ),
+        panel: Painel(),
         panelHeader: GestureDetector(
           onTap: () {
             _controller.show();
           },
           child: Container(
             height: 90.0,
-            color: _colorScheme.secondary,
             child: Play_Hide(),
           ),
         ),

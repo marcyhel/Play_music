@@ -17,6 +17,7 @@ class Play_Hide extends StatelessWidget {
             color: Colors.purple.shade900,
             height: 45,
             width: 45,
+            child: Image.asset("image/6.jpg"),
           ),
           Container(
             child: Column(
