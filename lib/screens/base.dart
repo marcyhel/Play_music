@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
+import 'package:get_it/get_it.dart';
+import 'package:play_music/mobx/img/mob_img.dart';
 import 'package:play_music/screens/painel/painel.dart';
 import 'package:play_music/screens/play_hide/play_hide.dart';
 import 'package:we_slide/we_slide.dart';
@@ -14,6 +17,7 @@ class Basic extends StatefulWidget {
 }
 
 class _BasicState extends State<Basic> {
+  final Mob_Page mob = GetIt.I<Mob_Page>();
   @override
   Widget build(BuildContext context) {
     final _colorScheme = Theme.of(context).colorScheme;
@@ -48,7 +52,11 @@ class _BasicState extends State<Basic> {
               physics: NeverScrollableScrollPhysics(),
               children: [Home(), Container(color: Colors.green)],
             )),
-        panel: Painel(),
+        panel: Observer(builder: (_) {
+          return Painel(
+            cor: mob.cor,
+          );
+        }),
         panelHeader: GestureDetector(
           onTap: () {
             _controller.show();

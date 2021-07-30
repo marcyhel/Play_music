@@ -43,7 +43,9 @@ class Home extends StatelessWidget {
                   CardsCustom(
                       img: "image/1.jpg", nome: "Nome", descricao: "descricao"),
                   CardsCustom(
-                      img: "image/2.jpg", nome: "Nome", descricao: "descricao"),
+                      img: "image/12.jpg",
+                      nome: "Nome",
+                      descricao: "descricao"),
                   CardsCustom(
                       img: "image/0.jpg", nome: "Nome", descricao: "descricao"),
                   CardsCustom(
